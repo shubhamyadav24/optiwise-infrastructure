@@ -1,0 +1,27 @@
+.page-header {
+  background: var(--ink);
+  color: var(--offwhite);
+  padding: 64px 0 56px;
+}
+
+.page-header__eyebrow {
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+
+.page-header__eyebrow::before {
+  background: var(--amber);
+}
+
+.page-header__title {
+  color: var(--offwhite);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  max-width: 720px;
+}
+
+.page-header__lede {
+  color: rgba(248, 246, 240, 0.75);
+  max-width: 560px;
+  font-size: 1.02rem;
+  margin-top: 12px;
+}
