@@ -200,3 +200,537 @@
     font-size: 0.85rem;
   }
 }
+
+
+.testimonials {
+  padding: 90px 0;
+  background: #f5f4f0;
+}
+
+
+/* ================================
+   SECTION HEADING
+================================ */
+
+.testimonials .section-head {
+  text-align: left;
+  margin-bottom: 45px;
+}
+
+.testimonials .section-head .eyebrow {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #b87922;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.testimonials .section-head h2 {
+  margin: 0;
+
+  color: #202020;
+
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.1;
+}
+
+
+/* ================================
+   3 CARDS IN ONE ROW
+================================ */
+
+.testimonials__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.testimonial-card {
+  min-width: 0;
+  min-height: 320px;
+
+  padding: 35px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e2dc;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.07);
+
+  overflow: hidden;
+}
+
+
+/* ================================
+   STARS
+================================ */
+
+.testimonial-card__stars {
+  display: flex;
+
+  gap: 4px;
+
+  margin-bottom: 20px;
+}
+
+.testimonial-card__stars span {
+  color: #d8d5ce;
+
+  font-size: 20px;
+}
+
+.testimonial-card__stars span.is-filled {
+  color: #d49a3a;
+}
+
+
+/* ================================
+   TEXT
+================================ */
+
+.testimonial-card__text {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ================================
+   CLIENT
+================================ */
+
+.testimonial-card__foot {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-top: 25px;
+}
+
+.testimonial-card__name {
+  color: #202020;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   LOCATION
+================================ */
+
+.testimonial-card .coord-tag {
+  padding: 4px 8px;
+
+  background: #f1eee8;
+
+  color: #777;
+
+  border-radius: 3px;
+
+  font-size: 11px;
+}
+
+
+/* ================================
+   DOTS
+================================ */
+
+.testimonials__dots {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 30px;
+}
+
+.testimonials__dots button {
+  width: 25px;
+  height: 4px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 2px;
+
+  background: #d1cec8;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.testimonials__dots button.active {
+  width: 45px;
+
+  background: #b87922;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 850px) {
+
+  .testimonials__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .testimonials {
+    padding: 65px 0;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    min-height: 300px;
+
+    padding: 30px 25px;
+  }
+
+}
+
+/* =========================================
+   TESTIMONIAL SECTION
+========================================= */
+
+.testimonials {
+  width: 100%;
+  padding: 80px 0;
+  background: #f5f4f0;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.testimonials .section-head {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.testimonials .section-head .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #b87922;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.testimonials .section-head h2 {
+  margin: 0;
+
+  color: #202020;
+
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.1;
+}
+
+
+/* =========================================
+   TESTIMONIAL GRID
+   EXACTLY 2 CARDS IN ONE ROW
+========================================= */
+
+.testimonials__grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+
+/* =========================================
+   TESTIMONIAL CARD
+========================================= */
+
+.testimonial-card {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  height: 230px;
+  min-height: 230px;
+
+  box-sizing: border-box;
+
+  padding: 28px 38px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e3dfd7;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+.testimonial-card__stars {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-bottom: 14px;
+}
+
+.testimonial-card__stars span {
+  color: #d8d5ce;
+
+  font-size: 19px;
+  line-height: 1;
+}
+
+.testimonial-card__stars span.is-filled {
+  color: #d49a3a;
+}
+
+
+/* =========================================
+   TESTIMONIAL TEXT
+========================================= */
+
+.testimonial-card__text {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 16px;
+  line-height: 1.55;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CLIENT DETAILS
+========================================= */
+
+.testimonial-card__foot {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin-top: 16px;
+}
+
+.testimonial-card__name {
+  color: #202020;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.testimonial-card .coord-tag {
+  padding: 4px 9px;
+
+  background: #f1eee8;
+
+  color: #777777;
+
+  border-radius: 3px;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   SLIDER DOTS
+========================================= */
+
+.testimonials__dots {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 25px;
+}
+
+.testimonials__dots button {
+  width: 25px;
+  height: 4px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 2px;
+
+  background: #d0ccc4;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.testimonials__dots button.active {
+  width: 45px;
+
+  background: #b87922;
+}
+
+
+/* =========================================
+   DESKTOP
+   ALWAYS 2 CARDS
+========================================= */
+
+@media (min-width: 769px) {
+
+  .testimonials__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial-card {
+    height: 230px;
+    min-height: 230px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   1 CARD
+========================================= */
+
+@media (max-width: 768px) {
+
+  .testimonials {
+    padding: 60px 0;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    height: 230px;
+    min-height: 230px;
+
+    padding: 25px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .testimonial-card {
+    height: 240px;
+    min-height: 240px;
+
+    padding: 22px;
+  }
+
+  .testimonial-card__text {
+    font-size: 15px;
+  }
+
+}
+/* Prevent testimonial slider from affecting page scroll */
+.testimonials {
+  overflow: hidden;
+}
+
+.testimonials__grid {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  overflow: hidden;
+}
+
+.testimonials__dots button {
+  display: block;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.testimonials__dots button:focus {
+  outline: none;
+}

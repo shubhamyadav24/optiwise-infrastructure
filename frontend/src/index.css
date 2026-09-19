@@ -226,19 +226,19 @@ button {
 }
 
 /* Blueprint grid paper texture */
-.grid-paper {
+/* .grid-paper {
   background-image:
     linear-gradient(var(--line-on-paper) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-on-paper) 1px, transparent 1px);
   background-size: var(--grid-size) var(--grid-size);
-}
+} */
 
-.grid-paper--dark {
+/* .grid-paper--dark {
   background-image:
     linear-gradient(var(--line-on-ink) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-on-ink) 1px, transparent 1px);
   background-size: var(--grid-size) var(--grid-size);
-}
+} */
 
 /* Coordinate / elevation tag — used as a structural divider device, not decoration */
 .coord-tag {

@@ -1,421 +1,435 @@
-/* =========================================
-   WHY US - NOTE
-========================================= */
+/* =========================================================
+   WHY US
+========================================================= */
 
-.whyus__note {
-  margin-top: 12px;
-  max-width: 680px;
-
-  font-size: 0.88rem;
-  line-height: 1.7;
-
-  color: var(--steel-soft);
-}
-
-
-/* =========================================
-   COMPARISON TABLE
-========================================= */
-
-.whyus__table {
-  width: 100%;
-
-  margin-bottom: 45px;
-
-  border: 1px solid var(--line-on-paper);
-
-  background: var(--offwhite);
-
-  overflow-x: auto;
-}
-
-
-/* =========================================
-   ROW
-========================================= */
-
-.whyus__row {
-  display: grid;
-
-  grid-template-columns: 1fr 1.5fr 1.5fr;
-
-  min-width: 680px;
-}
-
-.whyus__row + .whyus__row {
-  border-top: 1px solid var(--line-on-paper);
-}
-
-
-/* =========================================
-   HEADER
-========================================= */
-
-.whyus__row--head {
-  background: var(--ink);
-  color: var(--offwhite);
-}
-
-.whyus__row--head > div {
-  padding: 15px 22px;
-
-  font-size: 0.68rem;
-  font-weight: 600;
-
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.whyus__col--optiwise-head {
-  color: var(--amber);
-}
-
-
-/* =========================================
-   CELLS
-========================================= */
-
-.whyus__label,
-.whyus__typical,
-.whyus__optiwise {
-  padding: 20px 22px;
-
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
-
-.whyus__label {
-  font-weight: 600;
-
-  color: var(--ink);
-
-  border-right: 1px solid var(--line-on-paper);
-}
-
-.whyus__typical {
-  color: var(--ink-soft);
-
-  border-right: 1px solid var(--line-on-paper);
-}
-
-.whyus__optiwise {
-  color: var(--ink);
-
-  font-weight: 600;
-
-  background: rgba(226, 166, 59, 0.07);
-}
-
-
-/* =========================================
-   OPTIWISE CHECK ACCENT
-========================================= */
-
-.whyus__optiwise::first-letter {
-  color: var(--amber);
-}
-
-
-/* =========================================
-   COST HEADER
-========================================= */
-
-.whyus__cost-head {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  margin-bottom: 26px;
-
-  padding-bottom: 15px;
-
-  border-bottom: 1px solid var(--line-on-paper);
-}
-
-.whyus__cost-head h3 {
-  margin: 0;
-
-  font-size: 1.25rem;
-  font-weight: 650;
-
-  color: var(--ink);
-}
-
-/* =========================================
-   COST GRID
-========================================= */
-
-.whyus__cost-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 16px;
-
-  margin-bottom: 24px;
-
-  background: transparent;
-}
-
-
-/* =========================================
-   COST CARD
-========================================= */
-
-.cost-card {
+.whyus {
   position: relative;
-
-  min-height: 150px;
-
-  padding: 26px 24px;
-
-  background: var(--offwhite);
-
-  border: 1px solid var(--line-on-paper);
-  border-top: 3px solid var(--rust);
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-
+  width: 100%;
+  padding: 50px 0;
+  background: #f5f3ee;
+  color: #202020;
   overflow: hidden;
 }
 
+/* =========================================================
+   HEADER
+========================================================= */
 
-/* Small architectural corner */
-
-.cost-card::after {
-  content: "";
-
-  position: absolute;
-
-  right: 0;
-  bottom: 0;
-
-  width: 35px;
-  height: 35px;
-
-  border-left: 1px solid rgba(180, 145, 75, 0.25);
-  border-top: 1px solid rgba(180, 145, 75, 0.25);
-
-  opacity: 0.6;
+.whyus__header {
+  max-width: 850px;
+  margin-bottom: 70px;
 }
 
+.whyus__header .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 
-/* Hover */
-
-.cost-card:hover {
-  transform: translateY(-5px);
-
-  background: #ffffff;
-
-  border-color: rgba(180, 145, 75, 0.45);
-
-  border-top-color: var(--amber);
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.07);
-}
-
-
-/* =========================================
-   COST VALUE
-========================================= */
-
-.cost-card__range {
-  display: block;
-
-  margin-bottom: 12px;
+  color: #b87922;
 
   font-family: var(--font-mono);
-
-  font-size: 1.25rem;
-
-  font-weight: 700;
-
-  line-height: 1.2;
-
-  letter-spacing: -0.02em;
-
-  color: var(--ink);
-}
-
-
-/* =========================================
-   COST DESCRIPTION
-========================================= */
-
-.cost-card p {
-  margin: 0;
-
-  max-width: 230px;
-
-  font-size: 0.84rem;
-
-  line-height: 1.65;
-
-  color: var(--ink-soft);
-}
-
-
-/* =========================================
-   NUMBER / LABEL
-========================================= */
-
-.cost-card__number {
-  display: block;
-
-  margin-bottom: 20px;
-
-  font-family: var(--font-mono);
-
   font-size: 0.68rem;
-
-  letter-spacing: 0.12em;
-
-  color: var(--steel);
-
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 1000px) {
-
-  .whyus__cost-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+.whyus__header .eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #b87922;
 }
 
+.whyus__header h2 {
+  max-width: 850px;
+  margin: 18px 0 22px;
 
-@media (max-width: 600px) {
+  color: #202020;
 
-  .whyus__cost-grid {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
-  }
-
-  .cost-card {
-    min-height: 130px;
-
-    padding: 22px 20px;
-  }
-
-  .cost-card__range {
-    font-size: 1.15rem;
-  }
-
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  font-weight: 700;
 }
-/* =========================================
-   COST DESCRIPTION
-========================================= */
 
-.cost-card p {
+.whyus__header h2 span {
+  color: #b87922;
+}
+
+.whyus__header > p {
+  max-width: 680px;
   margin: 0;
 
-  max-width: 220px;
+  color: #73716b;
 
-  font-size: 0.82rem;
-  line-height: 1.65;
-
-  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.8;
 }
 
+/* =========================================================
+   MAIN TWO COLUMN AREA
+========================================================= */
 
-/* =========================================
-   DISCLAIMER
-========================================= */
-
-.whyus__disclaimer {
-  max-width: 720px;
-
-  margin-top: 12px;
-
-  font-size: 0.75rem;
-  line-height: 1.6;
-
-  color: var(--steel-soft);
+.whyus__main {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 75px;
+  align-items: start;
 }
 
+/* =========================================================
+   IMAGE
+========================================================= */
 
-/* =========================================
+.whyus__image {
+  position: sticky;
+  top: 100px;
+
+  width: 100%;
+  height: 680px;
+
+  overflow: hidden;
+
+  background: #252525;
+}
+
+.whyus__image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.whyus__image:hover img {
+  transform: scale(1.035);
+}
+
+/* Dark image overlay */
+
+.whyus__image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+/* Image branding */
+
+.whyus__image-overlay {
+  position: absolute;
+  z-index: 2;
+
+  left: 30px;
+  bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  color: #ffffff;
+}
+
+.whyus__image-overlay span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: #d49a3a;
+}
+
+.whyus__image-overlay strong {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+/* Image number */
+
+.whyus__image-number {
+  position: absolute;
+  z-index: 2;
+
+  top: 25px;
+  right: 25px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  color: #ffffff;
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.whyus__content {
+  min-width: 0;
+}
+
+/* Intro */
+
+.whyus__intro {
+  padding-bottom: 30px;
+  margin-bottom: 5px;
+
+  border-bottom: 1px solid #d7d3cb;
+}
+
+.whyus__label {
+  display: block;
+  margin-bottom: 13px;
+
+  color: #b87922;
+
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.whyus__intro p {
+  max-width: 650px;
+  margin: 0;
+
+  color: #4f4e49;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.whyus__detail {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 20px;
+
+  padding: 29px 0;
+
+  border-bottom: 1px solid #d7d3cb;
+}
+
+.whyus__detail-number {
+  color: #b87922;
+
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  padding-top: 4px;
+}
+
+.whyus__detail h3 {
+  margin: 0 0 9px;
+
+  color: #202020;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.whyus__detail p {
+  max-width: 650px;
+  margin: 0;
+
+  color: #73716b;
+
+  font-size: 0.84rem;
+  line-height: 1.75;
+}
+
+/* Hover */
+
+.whyus__detail {
+  transition: padding-left 0.25s ease;
+}
+
+.whyus__detail:hover {
+  padding-left: 8px;
+}
+
+/* =========================================================
+   BOTTOM STATEMENT
+========================================================= */
+
+.whyus__bottom {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 80px;
+  align-items: end;
+
+  margin-top: 100px;
+  padding-top: 55px;
+
+  border-top: 1px solid #cfcac1;
+}
+
+.whyus__bottom-label {
+  display: block;
+  margin-bottom: 15px;
+
+  color: #b87922;
+
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.whyus__bottom h3 {
+  margin: 0;
+
+  color: #202020;
+
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.whyus__bottom p {
+  max-width: 480px;
+  margin: 0;
+
+  color: #73716b;
+
+  font-size: 0.84rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
-@media (max-width: 1000px) {
-
-  .whyus__cost-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 950px) {
+  .whyus {
+    padding: 80px 0;
   }
 
-  .cost-card:nth-child(2) {
-    border-right: none;
-  }
-
-  .cost-card:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line-on-paper);
-  }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 650px) {
-
-  .whyus__table {
-    margin-bottom: 48px;
-  }
-
-  .whyus__row {
-    min-width: 620px;
-  }
-
-  .whyus__row--head > div {
-    padding: 13px 16px;
-  }
-
-  .whyus__label,
-  .whyus__typical,
-  .whyus__optiwise {
-    padding: 17px 16px;
-    font-size: 0.82rem;
-  }
-
-  .whyus__cost-grid {
+  .whyus__main {
     grid-template-columns: 1fr;
+    gap: 55px;
   }
 
-  .cost-card {
-    min-height: auto;
+  .whyus__image {
+    position: relative;
+    top: auto;
 
-    border-right: none;
-
-    border-bottom: 1px solid var(--line-on-paper);
+    height: 520px;
   }
 
-  .cost-card:last-child {
-    border-bottom: none;
+  .whyus__bottom {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 75px;
   }
-
-  .cost-card:nth-child(2) {
-    border-right: none;
-  }
-
-  .whyus__cost-head {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
 }
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .whyus {
+    padding: 65px 0;
+  }
+
+  .whyus__header {
+    margin-bottom: 45px;
+  }
+
+  .whyus__header h2 {
+    font-size: 2.7rem;
+  }
+
+  .whyus__header > p {
+    font-size: 0.86rem;
+  }
+
+  .whyus__main {
+    gap: 40px;
+  }
+
+  .whyus__image {
+    height: 420px;
+  }
+
+  .whyus__image-overlay {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .whyus__image-number {
+    top: 18px;
+    right: 18px;
+  }
+
+  .whyus__intro {
+    padding-bottom: 25px;
+  }
+
+  .whyus__intro p {
+    font-size: 0.86rem;
+  }
+
+  .whyus__detail {
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+
+    padding: 23px 0;
+  }
+
+  .whyus__detail:hover {
+    padding-left: 0;
+  }
+
+  .whyus__detail h3 {
+    font-size: 0.98rem;
+  }
+
+  .whyus__detail p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+  .whyus__bottom {
+    margin-top: 60px;
+    padding-top: 40px;
+  }
+
+  .whyus__bottom h3 {
+    font-size: 2.2rem;
+  }
+
+  .whyus__bottom p {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+

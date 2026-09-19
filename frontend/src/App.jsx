@@ -16,7 +16,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import ManageProjects from './pages/admin/ManageProjects';
 import ManageClients from './pages/admin/ManageClients';
 import ManageMessages from './pages/admin/ManageMessages';
-
+import ManageClientLogos from "./pages/admin/ManageClientLogos";
 const PublicLayout = ({ children }) => (
   <>
     <Navbar />
@@ -52,6 +52,10 @@ function App() {
         <Route path="projects" element={<ManageProjects />} />
         <Route path="clients" element={<ManageClients />} />
         <Route path="messages" element={<ManageMessages />} />
+          <Route
+    path="client-logos"
+    element={<ManageClientLogos />}
+  />
       </Route>
 
       {/* Fallback */}

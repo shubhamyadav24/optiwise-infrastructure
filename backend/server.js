@@ -1,42 +1,176 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const connectDB = require('./config/db');
+require("dotenv").config();
 
-const authRoutes = require('./routes/authRoutes');
-const projectRoutes = require('./routes/projectRoutes');
-const clientRoutes = require('./routes/clientRoutes');
-const contactRoutes = require('./routes/contactRoutes');
-const uploadRoutes = require('./routes/uploadRoutes');
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
+
+const connectDB = require("./config/db");
+
+
+// ==========================================
+// ROUTES
+// ==========================================
+
+const authRoutes = require("./routes/authRoutes");
+const projectRoutes = require("./routes/projectRoutes");
+const clientRoutes = require("./routes/clientRoutes");
+const contactRoutes = require("./routes/contactRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
+const clientLogoRoutes = require("./routes/clientLogos");
+
+
+// ==========================================
+// APP
+// ==========================================
 
 const app = express();
 
+
+// ==========================================
+// DATABASE
+// ==========================================
+
 connectDB();
 
-const allowedOrigins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173').split(',');
-app.use(cors({ origin: allowedOrigins }));
+
+// ==========================================
+// CORS
+// ==========================================
+
+const allowedOrigins = (
+  process.env.CLIENT_ORIGIN ||
+  "http://localhost:5173"
+)
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+  })
+);
+
+
+// ==========================================
+// BODY PARSER
+// ==========================================
+
 app.use(express.json());
 
-// Serve uploaded images statically
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
+// ==========================================
+// STATIC UPLOADS
+// ==========================================
 
-app.use('/api/auth', authRoutes);
-app.use('/api/projects', projectRoutes);
-app.use('/api/clients', clientRoutes);
-app.use('/api/contact', contactRoutes);
-app.use('/api/upload', uploadRoutes);
+app.use(
+  "/uploads",
+  express.static(
+    path.join(__dirname, "uploads")
+  )
+);
 
-// 404 handler
-app.use((req, res) => res.status(404).json({ message: 'Route not found.' }));
 
-// Central error handler (e.g. multer file-type errors)
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(err.status || 500).json({ message: err.message || 'Something went wrong.' });
+// ==========================================
+// HEALTH CHECK
+// ==========================================
+
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "ok",
+  });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Optiwise API running on port ${PORT}`));
+
+// ==========================================
+// API ROUTES
+// ==========================================
+
+// Authentication
+app.use(
+  "/api/auth",
+  authRoutes
+);
+
+
+// Projects
+app.use(
+  "/api/projects",
+  projectRoutes
+);
+
+
+// Clients / Testimonials
+app.use(
+  "/api/clients",
+  clientRoutes
+);
+
+
+// Contact / Enquiries
+app.use(
+  "/api/contact",
+  contactRoutes
+);
+
+
+// General image upload
+app.use(
+  "/api/upload",
+  uploadRoutes
+);
+
+
+// ==========================================
+// CLIENT LOGOS
+// ==========================================
+
+app.use(
+  "/api/client-logos",
+  clientLogoRoutes
+);
+
+
+// ==========================================
+// 404 HANDLER
+// ==========================================
+
+app.use((req, res) => {
+  res.status(404).json({
+    message: "Route not found.",
+  });
+});
+
+
+// ==========================================
+// CENTRAL ERROR HANDLER
+// ==========================================
+
+app.use(
+  (err, req, res, next) => {
+    console.error("SERVER ERROR:", err);
+
+    res.status(err.status || 500).json({
+      message:
+        err.message ||
+        "Something went wrong.",
+    });
+  }
+);
+
+
+// ==========================================
+// START SERVER
+// ==========================================
+
+const PORT =
+  process.env.PORT || 5000;
+
+app.listen(
+  PORT,
+  () => {
+    console.log(
+      `Optiwise API running on port ${PORT}`
+    );
+  }
+);

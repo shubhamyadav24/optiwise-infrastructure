@@ -296,3 +296,384 @@
     gap: 14px;
   }
 }
+
+/* =========================================
+   SERVICES SECTION
+========================================= */
+
+.services {
+  width: 100%;
+  padding: 90px 0;
+  background: #f5f4f0;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-head {
+  margin-bottom: 45px;
+}
+
+.section-head .eyebrow {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #b87922;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-head h2 {
+  margin: 0;
+
+  max-width: 750px;
+
+  color: #202020;
+
+  font-size: clamp(35px, 4vw, 55px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   SERVICES GRID
+   5 CARDS IN ONE ROW
+========================================= */
+
+.services__grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+
+  width: 100%;
+}
+
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
+.service-card {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  height: 410px;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.service-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   IMAGE DARK OVERLAY
+========================================= */
+
+.service-card__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.20) 35%,
+      rgba(0, 0, 0, 0.55) 65%,
+      rgba(0, 0, 0, 0.90) 100%
+    );
+
+  transition:
+    background 0.4s ease;
+}
+
+
+/* Darker overlay on hover */
+
+.service-card:hover .service-card__overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.35) 40%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.service-card__content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  padding: 24px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   SERVICE CODE
+========================================= */
+
+.service-card__code {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  border-radius: 3px;
+
+  background: rgba(0, 0, 0, 0.20);
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  backdrop-filter: blur(4px);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.service-card:hover .service-card__code {
+  background: #b87922;
+  border-color: #b87922;
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.service-card h3 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.service-card p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.service-card__arrow {
+  display: block;
+
+  margin-top: 18px;
+
+  color: #d69a45;
+
+  font-size: 24px;
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.service-card:hover .service-card__arrow {
+  transform: translateX(8px);
+}
+
+
+/* =========================================
+   DESKTOP
+   FORCE 5 IN ONE ROW
+========================================= */
+
+@media (min-width: 1101px) {
+
+  .services__grid {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+  .service-card {
+    height: 370px;
+  }
+
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .services__grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+  }
+
+  .service-card {
+    height: 370px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .services {
+    padding: 70px 0;
+  }
+
+  .services__grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+  }
+
+  .service-card {
+    height: 370px;
+  }
+
+  .service-card__content {
+    padding: 22px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  .services {
+    padding: 60px 0;
+  }
+
+  .section-head {
+    margin-bottom: 30px;
+  }
+
+  .section-head h2 {
+    font-size: 34px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .service-card {
+    height: 360px;
+  }
+
+  .service-card__content {
+    padding: 24px;
+  }
+
+  .service-card h3 {
+    font-size: 24px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .service-card {
+    height: 340px;
+  }
+
+  .service-card__content {
+    padding: 20px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+}

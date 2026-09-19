@@ -1,96 +1,135 @@
-import { motion } from 'framer-motion';
-import './whyus.css';
+import { motion } from "framer-motion";
+import "./whyus.css";
+
+import whyUsImage from "../assets/why-us.jpg";
 
 const ROWS = [
   {
-    label: 'Point of contact',
-    typical: 'Separate architect, contractor and surveyor — you coordinate between them',
-    optiwise: 'One team for design, survey and construction, start to finish'
+    number: "01",
+    title: "One Point of Contact",
+    text: "Instead of coordinating separately with an architect, surveyor and contractor, you can work with one team. Optiwise Infrastructure brings planning, surveying, design and construction services together so your project can move from the initial idea to execution with better coordination.",
   },
   {
-    label: 'Design before you build',
-    typical: 'Often skipped or charged as a large separate fee',
-    optiwise: '2D plan + realistic 3D elevation included in project consultancy'
+    number: "02",
+    title: "Design Before Construction",
+    text: "We believe the design should be clear before construction begins. Our 2D planning and 3D elevation services help you understand the layout, spaces, proportions and exterior appearance of your project before work starts on site.",
   },
   {
-    label: 'Land survey',
-    typical: 'Basic manual measurement, prone to boundary disputes later',
-    optiwise: 'TS & DGPS survey for accurate, defensible boundary and level data'
+    number: "03",
+    title: "Accurate Land Survey",
+    text: "Good construction starts with accurate site information. Our Total Station and DGPS surveying services help establish reliable measurements, boundaries, levels and site data required for planning and execution.",
   },
-  {
-    label: 'Cost visibility',
-    typical: 'Verbal estimates, revised mid-project',
-    optiwise: 'Written estimate against your plan before work starts'
-  },
-  {
-    label: 'After handover',
-    typical: 'Contractor moves to the next site immediately',
-    optiwise: 'Reachable for post-handover queries and minor fixes'
-  }
+ 
 ];
 
 const WhyUs = () => {
   return (
-    <section className="section whyus grid-paper" id="why-us">
+    <section className="whyus" id="why-us">
       <div className="container">
-        <div className="section-head">
+
+        {/* HEADER */}
+
+        <div className="whyus__header">
           <span className="eyebrow">Why Optiwise</span>
-          <h2>How we compare to a typical build in Indore</h2>
-          <p className="whyus__note">
-            General patterns we see across the industry, not a claim about any one
-            company. Every project is different — talk to us for a quote specific
-            to your plot and requirements.
+
+          <h2>
+            Built around your
+            <span> complete vision.</span>
+          </h2>
+
+          <p>
+            From land measurement and planning to construction and finishing,
+            we bring the important parts of your project together under one
+            coordinated team.
           </p>
         </div>
 
-        <div className="whyus__table" role="table" aria-label="Comparison with a typical construction process">
-          <div className="whyus__row whyus__row--head" role="row">
-            <div role="columnheader"></div>
-            <div role="columnheader" className="mono">Typical approach</div>
-            <div role="columnheader" className="mono whyus__col--optiwise-head">Optiwise Infrastructure</div>
+        {/* MAIN CONTENT */}
+
+        <div className="whyus__main">
+
+          {/* IMAGE */}
+
+          <motion.div
+            className="whyus__image"
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7 }}
+          >
+            <img
+              src={whyUsImage}
+              alt="Optiwise Infrastructure construction project"
+            />
+
+            <div className="whyus__image-overlay">
+              <span>OPTIWISE</span>
+              <strong>INFRASTRUCTURE</strong>
+            </div>
+
+            <div className="whyus__image-number">
+              01
+            </div>
+          </motion.div>
+
+          {/* CONTENT */}
+
+          <div className="whyus__content">
+
+            <div className="whyus__intro">
+              <span className="whyus__label">
+                OUR APPROACH
+              </span>
+
+              <p>
+                Every construction project has different requirements. Our
+                approach is to understand the site, establish the right
+                design, plan the work and then execute it with attention to
+                quality and coordination. This helps reduce unnecessary
+                confusion between different stages of a project.
+              </p>
+            </div>
+
+            {/* DETAILS */}
+
+            <div className="whyus__details">
+
+              {ROWS.map((item, index) => (
+                <motion.article
+                  className="whyus__detail"
+                  key={item.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{
+                    once: true,
+                    amount: 0.2,
+                  }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.07,
+                  }}
+                >
+                  <div className="whyus__detail-number">
+                    {item.number}
+                  </div>
+
+                  <div>
+                    <h3>{item.title}</h3>
+
+                    <p>{item.text}</p>
+                  </div>
+                </motion.article>
+              ))}
+
+            </div>
+
           </div>
-          {ROWS.map((row, i) => (
-            <motion.div
-              className="whyus__row"
-              role="row"
-              key={row.label}
-              initial={{ opacity: 0, x: -12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ delay: i * 0.06, duration: 0.4 }}
-            >
-              <div role="cell" className="whyus__label">{row.label}</div>
-              <div role="cell" className="whyus__typical">{row.typical}</div>
-              <div role="cell" className="whyus__optiwise">{row.optiwise}</div>
-            </motion.div>
-          ))}
         </div>
 
-        <div className="whyus__cost">
-          <div className="whyus__cost-head">
-            <h3>Indicative construction costs, Indore</h3>
-            <span className="coord-tag">Updated periodically &middot; ask us for a written quote</span>
-          </div>
-          <div className="whyus__cost-grid">
-            <div className="cost-card">
-              <span className="mono cost-card__range">₹1,500&ndash;₹1,900 / sq. ft.</span>
-              <p>Basic construction &mdash; structure, standard fittings, simple finish</p>
-            </div>
-            <div className="cost-card">
-              <span className="mono cost-card__range">₹1,900&ndash;₹2,400 / sq. ft.</span>
-              <p>Standard construction &mdash; branded fittings, better finish, basic interiors</p>
-            </div>
-            <div className="cost-card">
-              <span className="mono cost-card__range">₹2,400+ / sq. ft.</span>
-              <p>Premium construction &mdash; designer interiors, higher-end materials &amp; facade</p>
-            </div>
-          </div>
-          <p className="whyus__disclaimer">
-            These are broad, indicative ranges for planning purposes only — actual
-            cost depends on plot, design, materials and site conditions. We'll
-            give you a firm, itemised estimate after a site visit.
-          </p>
-        </div>
+        {/* BOTTOM STATEMENT */}
+
+       
+
       </div>
     </section>
   );

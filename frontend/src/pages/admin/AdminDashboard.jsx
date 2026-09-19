@@ -27,7 +27,24 @@ const AdminDashboard = () => {
           <span className="coord-tag">Overview</span>
           <h1>Dashboard</h1>
         </div>
-        <Link to="/admin/projects" className="btn btn-dark">Add a Project</Link>
+        {/* <Link to="/admin/projects" className="btn btn-dark">Add a Project</Link> */}
+        <div style={{ display: "flex", gap: "10px" }}>
+
+  <Link
+    to="/admin/projects"
+    className="btn btn-dark"
+  >
+    Add a Project
+  </Link>
+
+  <Link
+    to="/admin/client-logos"
+    className="btn btn-dark"
+  >
+    Manage Client Logos
+  </Link>
+
+</div>
       </div>
 
       <div className="admin-stats">
