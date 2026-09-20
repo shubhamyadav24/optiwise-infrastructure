@@ -1,11 +1,23 @@
 import { motion } from 'framer-motion';
 import './projectcard.css';
 
-const UPLOADS_URL = import.meta.env.VITE_UPLOADS_URL || 'http://localhost:5000';
+const UPLOADS_URL =
+  import.meta.env.VITE_UPLOADS_URL ||
+  'https://optiwise-infrastructure.onrender.com';
 
 const resolveImg = (src) => {
   if (!src) return null;
-  return src.startsWith('http') ? src : `${UPLOADS_URL}${src}`;
+
+  // If MongoDB already contains a complete URL
+  if (src.startsWith('http://') || src.startsWith('https://')) {
+    return src;
+  }
+
+  // Convert:
+  // /uploads/image.png
+  // into:
+  // https://optiwise-infrastructure.onrender.com/uploads/image.png
+  return `${UPLOADS_URL.replace(/\/$/, '')}/${src.replace(/^\//, '')}`;
 };
 
 const ProjectCard = ({ project, index = 0 }) => {
@@ -17,22 +29,56 @@ const ProjectCard = ({ project, index = 0 }) => {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ delay: (index % 6) * 0.06, duration: 0.5 }}
+      transition={{
+        delay: (index % 6) * 0.06,
+        duration: 0.5,
+      }}
     >
+      {/* Project Image */}
       <div className="project-card__media">
         {img ? (
-          <img src={img} alt={project.title} loading="lazy" />
+          <img
+            src={img}
+            alt={project.title || 'Project'}
+            loading="lazy"
+            onError={(e) => {
+              console.error('Project image failed to load:', img);
+
+              // Hide broken image
+              e.currentTarget.style.display = 'none';
+            }}
+          />
         ) : (
-          <div className="project-card__placeholder grid-paper" aria-hidden="true">
+          <div
+            className="project-card__placeholder grid-paper"
+            aria-hidden="true"
+          >
             <span className="coord-tag">NO IMAGE</span>
           </div>
         )}
-        <span className="project-card__status mono">{project.status}</span>
+
+        {/* Project Status */}
+        {project.status && (
+          <span className="project-card__status mono">
+            {project.status}
+          </span>
+        )}
       </div>
+
+      {/* Project Information */}
       <div className="project-card__body">
-        <span className="coord-tag">{project.category}{project.year ? ` · ${project.year}` : ''}</span>
+        <span className="coord-tag">
+          {project.category || 'PROJECT'}
+          {project.year ? ` · ${project.year}` : ''}
+        </span>
+
         <h3>{project.title}</h3>
-        {project.location && <p className="project-card__loc">{project.location}</p>}
+
+        {project.location && (
+          <p className="project-card__loc">
+            {project.location}
+          </p>
+        )}
       </div>
     </motion.article>
   );
