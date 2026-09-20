@@ -24,7 +24,7 @@ const clientLogoRoutes = require("./routes/clientLogos");
 // ==========================================
 
 const app = express();
-
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ==========================================
 // DATABASE
