@@ -306,3 +306,11 @@
   transform: translateX(4px);
   color: #c7a45b;
 }
+
+.footer__logo-image {
+  display: block;
+  width: auto;
+  height: 78px;
+  max-width: 240px;
+  object-fit: contain;
+}
